@@ -5,6 +5,13 @@
   <meta name="theme-color" content="#101C24">
   <title>pCuwk</title>
 
+  <meta name="description" content="pCuwk adalah aplikasi media sosial berbasis rating foto yang dirancang dengan sistem penilaian sederhana, aman, dan kompetitif. pCuwk fokus pada kesederhanaan, privasi tanpa distraksi, dan adil.">
+  <meta name="keywords" content="pCuwk, aplikasi media sosial, rating foto, sistem penilaian sederhana, aman, kompetitif, rating 1 sampai 5 bintang, privasi tanpa distraksi, adil, anti body shaming">
+  
+  <meta property="og:title" content="pCuwk">
+  <meta property="og:description" content="pCuwk adalah aplikasi media sosial berbasis rating foto yang dirancang dengan sistem penilaian sederhana, aman, dan kompetitif.">
+  <meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPBhaDis244q4TRFNqAVbaHD9nWfJOVxZXqut8qhPfO_Pt0cOtLj2IVfqKbzEsp76mnOgxLUHN4zSNdg5lLvOVqraE5wZ3YnqprQFrL6HgOwL5IFVfz6SrAK5_mnagipbu4ETvdPeELOzFQMYflHlyq60nWfDjGJ14gg3v4dq7Bp-5OaEKFcRZJwIKnxYY/s256/sosmed_20251021_045841.jpg">
+  <meta property="og:type" content="website">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -34,6 +41,99 @@
     .container {
       padding: 64px 5%;
       max-width: 600px;
+      margin: auto;
+    }
+
+    .profile-image {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+      margin-bottom: 20px;
+    }
+
+    .profile-name {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 0 0 4px 0;
+    }
+
+    .profile-bio {
+      font-size: 16px;
+      color: #C8C8C8;
+      margin-bottom: 20px;
+    }
+
+    .social-icons {
+      margin-bottom: 28px;
+    }
+
+    .social-icons a {
+      color: var(--primary-color);
+      font-size: 20px;
+      margin: 0 8px;
+      display: inline-block;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .link-item {
+      display: block;
+      background: var(--link-bg);
+      padding: 16px 24px;
+      border-radius: 12px;
+      color: var(--text-color);
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      margin-top: 16px;
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="particles-js"></div>
+
+  <div class="container">
+    <header>
+      <img class="profile-image" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPBhaDis244q4TRFNqAVbaHD9nWfJOVxZXqut8qhPfO_Pt0cOtLj2IVfqKbzEsp76mnOgxLUHN4zSNdg5lLvOVqraE5wZ3YnqprQFrL6HgOwL5IFVfz6SrAK5_mnagipbu4ETvdPeELOzFQMYflHlyq60nWfDjGJ14gg3v4dq7Bp-5OaEKFcRZJwIKnxYY/s256/sosmed_20251021_045841.jpg" alt="pCuwk">
+      <h1 class="profile-name">pCuwk</h1>
+      <p class="profile-bio">Lihat dan nilai foto tanpa ribet</p>
+    </header>
+
+    <nav class="social-icons">
+      <a href="https://instagram.com/pcuwkofficial" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://facebook.com/pCuwk" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://t.me/pCuwk" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+      <a href="https://x.com/pcuwkofficial" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+    </nav>
+
+    <a class="link-item" href="https://sociabuzz.com/pcuwk/support">BERI DUKUNGAN</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#00A8A0" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#00A8A0", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 2, "out_mode": "out" }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": { "onhover": { "enable": false }, "onclick": { "enable": false }, "resize": true }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>
       margin: auto;
     }
 
