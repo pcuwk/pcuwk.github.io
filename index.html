@@ -1,129 +1,382 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#101C24">
-  <title>pCuwk</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101C24">
+    <title>pCuwk Ratepap</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800&display=swap');
 
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <style>
-    :root {
-      --primary-color: #00A8A0;
-      --text-color: #EEEEEE;
-      --bg-color: #101C24;
-      --link-bg: rgba(0, 168, 160, 0.2);
-    }
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #101C24;
+            color: #6C8088;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-    body {
-      margin: 0;
-      background: var(--bg-color);
-      font-family: "Rubik", sans-serif;
-      color: var(--text-color);
-      text-align: center;
-      min-height: 100vh;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
-    #particles-js {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-    }
+        .flex-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .container {
-      padding: 64px 5%;
-      max-width: 600px;
-      margin: auto;
-    }
+        .hero-section {
+            padding: 60px 0;
+        }
 
-    .profile-image {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-      margin-bottom: 20px;
-    }
+        .hero-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 115px;
+        }
 
-    .profile-name {
-      font-size: 28px;
-      font-weight: bold;
-      margin: 0 0 4px 0;
-    }
+        .hero-text {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-    .profile-bio {
-      font-size: 16px;
-      color: #C8C8C8;
-      margin-bottom: 20px;
-    }
+        .app-logo {
+            width: 84px;
+            height: 84px;
+            background-color: #162631;
+            border: 2px solid #233948;
+            border-radius: 22%;
+            margin: 0 auto 20px auto;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
 
-    .social-icons {
-      margin-bottom: 28px;
-    }
+        .app-logo img, .frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-    .social-icons a {
-      color: var(--primary-color);
-      font-size: 20px;
-      margin: 0 8px;
-      display: inline-block;
-      -webkit-tap-highlight-color: transparent;
-    }
+        .hero-text h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            font-style: italic;
+            color: #e8f4ee;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
 
-    .link-item {
-      display: block;
-      background: var(--link-bg);
-      padding: 16px 24px;
-      border-radius: 12px;
-      color: var(--text-color);
-      font-size: 16px;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-      margin-top: 16px;
-      -webkit-tap-highlight-color: transparent;
-    }
-  </style>
+        .description p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .description .highlight {
+            color: #00A8A0;
+            font-weight: 700;
+            font-size: 1.15rem;
+        }
+
+        .download-container {
+            margin-top: 32px;
+            width: 100%;
+        }
+
+        .btn-download {
+            padding: 14px 28px;
+            background-color: #00A8A0;
+            color: #101C24;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 16px;
+            box-shadow: 0 10px 20px -3px rgba(0, 168, 160, 0.3);
+            white-space: nowrap;
+            font-size: 0.95rem;
+        }
+
+        .btn-download i {
+            margin-right: 12px;
+        }
+
+        .hero-showcase, .image-wrap {
+            width: 100%;
+        }
+
+        .image-wrap {
+            gap: 40px;
+        }
+
+        .frame {
+            aspect-ratio: 12 / 25;
+            background-color: #162631;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 25px 55px -12px rgba(0, 0, 0, 0.6);
+            border: 2px solid #233948;
+            width: 185px;
+            display: block;
+        }
+
+        .frame-left, .frame-right {
+            filter: grayscale(20%);
+        }
+
+        .frame-left { transform: rotate(-10deg) translateY(15px); }
+        .frame-center { transform: translateY(-25px); z-index: 10; }
+        .frame-right { transform: rotate(10deg) translateY(15px); }
+
+        .features-section {
+            padding: 60px 0 80px 0;
+            background-color: #13222c;
+            border-top: 1px solid #192c39;
+            border-bottom: 1px solid #192c39;
+        }
+
+        .features-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 60px auto;
+        }
+
+        .features-header h2 {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        @media (min-width: 768px) {
+            .features-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .card {
+            padding: 32px;
+            background-color: #162631;
+            border: 1px solid rgba(35, 57, 72, 0.6);
+            border-radius: 12px;
+            text-align: left;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            color: #ffffff;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+        }
+
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            font-size: 1.25rem;
+            margin-bottom: 24px;
+            background-color: rgba(0, 168, 160, 0.1);
+            color: #00A8A0;
+        }
+
+        .footer {
+            background-color: #0d171e;
+            padding: 64px 0 48px;
+            text-align: center;
+        }
+
+        .footer h3 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+
+        .footer p {
+            max-width: 550px;
+            margin: 0 auto 20px;
+            font-size: 0.9rem;
+        }
+
+        .email-box {
+            margin-bottom: 32px;
+        }
+
+        .email-link {
+            gap: 10px;
+            color: #00A8A0;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 8px 20px;
+            background-color: rgba(0, 168, 160, 0.05);
+            border: 1px dashed rgba(0, 168, 160, 0.3);
+            border-radius: 50px;
+        }
+
+        .social-icons {
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .social-icons a {
+            width: 52px;
+            height: 52px;
+            border-radius: 50px;
+            background-color: #162631;
+            color: #6C8088;
+            font-size: 1.3rem;
+            text-decoration: none;
+            border: 1px solid rgba(35, 57, 72, 0.5);
+        }
+
+        .footer-links {
+            gap: 20px;
+            margin-bottom: 24px;
+            font-size: 0.85rem;
+        }
+
+        .footer-links a {
+            color: #6C8088;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .divider {
+            width: 80px;
+            height: 1px;
+            background-color: #192c39;
+            margin: 0 auto 32px;
+        }
+
+        .copyright {
+            font-size: 0.75rem !important;
+            color: #6C8088 !important;
+            letter-spacing: 0.05em;
+            font-weight: 500;
+        }
+
+        @media (max-width: 576px) {
+            .hero-section { padding: 40px 0; }
+            .hero-grid { gap: 65px; }
+            .btn-download { padding: 12px 20px; font-size: 0.85rem; }
+            .image-wrap { gap: 12px; padding: 0 14px; }
+            .frame { width: 27vw; } 
+            .frame-left { transform: rotate(-8deg) translateY(10px); }
+            .frame-center { transform: translateY(-15px); }
+            .frame-right { transform: rotate(8deg) translateY(10px); }
+        }
+    </style>
 </head>
-
 <body>
-  <div id="particles-js"></div>
 
-  <div class="container">
-    <header>
-      <img class="profile-image" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPBhaDis244q4TRFNqAVbaHD9nWfJOVxZXqut8qhPfO_Pt0cOtLj2IVfqKbzEsp76mnOgxLUHN4zSNdg5lLvOVqraE5wZ3YnqprQFrL6HgOwL5IFVfz6SrAK5_mnagipbu4ETvdPeELOzFQMYflHlyq60nWfDjGJ14gg3v4dq7Bp-5OaEKFcRZJwIKnxYY/s256/sosmed_20251021_045841.jpg" alt="pCuwk">
-      <h1 class="profile-name">pCuwk</h1>
-      <p class="profile-bio">Lihat dan nilai foto tanpa ribet</p>
-    </header>
+    <section class="hero-section">
+        <div class="container hero-grid">
+            
+            <div class="hero-text">
+                <div class="app-logo flex-center">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPBhaDis244q4TRFNqAVbaHD9nWfJOVxZXqut8qhPfO_Pt0cOtLj2IVfqKbzEsp76mnOgxLUHN4zSNdg5lLvOVqraE5wZ3YnqprQFrL6HgOwL5IFVfz6SrAK5_mnagipbu4ETvdPeELOzFQMYflHlyq60nWfDjGJ14gg3v4dq7Bp-5OaEKFcRZJwIKnxYY/s256/sosmed_20251021_045841.jpg" alt="Logo pCuwk">
+                </div>
+                
+                <h1>pCuwk</h1>
+                
+                <div class="description">
+                    <p>pCuwk adalah aplikasi media sosial berbasis rating foto yang dirancang dengan sistem penilaian sederhana, aman, dan kompetitif.</p>
+                    <p class="highlight">pCuwk fokus pada kesederhanaan, privasi tanpa distraksi, dan adil.</p>
+                </div>
 
-    <nav class="social-icons">
-      <a href="https://instagram.com/pcuwkofficial" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://www.facebook.com/pCuwk" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-      <a href="https://t.me/pCuwk" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
-      <a href="https://x.com/pcuwkofficial" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-    </nav>
+                <div class="download-container flex-center">
+                    <a href="https://pcuwk.my.id/pCuwk.apk" class="btn-download">
+                        <i class="fa-solid fa-download"></i> Download APK Versi Terbaru
+                    </a>
+                </div>
+            </div>
 
-    <a class="link-item" href="https://sociabuzz.com/pcuwk/support">BERI DUKUNGAN</a>
-  </div>
+            <div class="hero-showcase flex-center">
+                <div class="image-wrap flex-center">
+                    <a href="https://pcuwk.my.id/preview2.jpg" target="_blank" class="frame frame-left"><img src="https://pcuwk.my.id/preview2.jpg" alt="Screen 1"></a>
+                    <a href="https://pcuwk.my.id/preview1.jpg" target="_blank" class="frame frame-center"><img src="https://pcuwk.my.id/preview1.jpg" alt="Screen 2"></a>
+                    <a href="https://pcuwk.my.id/preview3.jpg" target="_blank" class="frame frame-right"><img src="https://pcuwk.my.id/preview3.jpg" alt="Screen 3"></a>
+                </div>
+            </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-        "color": { "value": "#00A8A0" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.5 },
-        "size": { "value": 3, "random": true },
-        "line_linked": { "enable": true, "distance": 150, "color": "#00A8A0", "opacity": 0.4, "width": 1 },
-        "move": { "enable": true, "speed": 2, "out_mode": "out" }
-      },
-      "interactivity": {
-        "detect_on": "canvas",
-        "events": { "onhover": { "enable": false }, "onclick": { "enable": false }, "resize": true }
-      },
-      "retina_detect": true
-    });
-  </script>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <div class="features-header">
+                <h2>Fitur Utama pCuwk</h2>
+                <p>Dibuat khusus untuk menciptakan ekosistem berbagi foto yang lebih sehat dan seru.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="card">
+                    <div class="icon-box flex-center"><i class="fa-solid fa-star"></i></div>
+                    <h3>1. Sistem Rating Foto</h3>
+                    <p>Ekspresikan penilaianmu lewat skala 1 hingga 5 bintang secara murni. Tanpa adanya counter 'like' publik yang memicu kecemasan sosial, penilaian menjadi lebih jujur dan objektif.</p>
+                </div>
+                <div class="card">
+                    <div class="icon-box flex-center"><i class="fa-solid fa-user-astronaut"></i></div>
+                    <h3>2. Membuat Profil</h3>
+                    <p>Bangun identitas digitalmu dengan mudah. Halaman profil di pCuwk dirancang minimalis dan bersih, memberikan panggung utama bagi galeri foto-foto terbaikmu.</p>
+                </div>
+                <div class="card">
+                    <div class="icon-box flex-center"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>3. Popularitas</h3>
+                    <p>Algoritma kompetitif yang adil untuk semua. Popularitas fotomu ditentukan oleh interaksi aktif dan waktu. Intensitasnya akan turun alami seiring waktu jika tidak mendapatkan interaksi baru.</p>
+                </div>
+                <div class="card">
+                    <div class="icon-box flex-center"><i class="fa-solid fa-user-shield"></i></div>
+                    <h3>4. Review & Feedback</h3>
+                    <p>Bebas berekspresi tanpa takut dihakimi. Fitur komentar bersifat opsional dan sepenuhnya privat. Hanya bisa diakses oleh pemilik foto untuk mengurangi risiko body shaming.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <h3>Hubungi & Ikuti Kami</h3>
+            <p>Punya pertanyaan atau masukan? Jalin komunikasi dengan kami melalui platform di bawah ini.</p>
+            
+            <div class="email-box">
+                <a href="mailto:pcuwk@proton.me" class="email-link inline-flex flex-center">
+                    <i class="fa-solid fa-envelope"></i> pcuwk@proton.me
+                </a>
+            </div>
+
+            <div class="social-icons flex-center">
+                <a href="https://t.me/pCuwk" target="_blank" class="flex-center" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                <a href="https://x.com/pcuwkofficial" target="_blank" class="flex-center" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            
+            <div class="footer-links flex-center">
+                <a href="https://pcuwk.my.id/privacy-policy.html">Kebijakan Privasi</a>
+                <a href="https://pcuwk.my.id/community-guidelines.html">Pedoman Komunitas</a>
+            </div>
+
+            <div class="divider"></div>
+            <p class="copyright">Copyright &copy; 2026 pCuwk. All Rights Reserved.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
